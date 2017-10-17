@@ -21,10 +21,10 @@ public class UnitTHeli extends Unit {
         this.unitType = UnitType.air;
         this.driveType = Drive.air;
         this.gas = 99;
-        this.currentHP = HP;
+        this.currentHealth = health;
         this.currentGas = gas;
         //TODO balancing
-        //this.strength = 99;
+        //this.defStrength = 99;
         this.mobility = 6;
         this.vision = 1;
         this.rangeLow = 1;

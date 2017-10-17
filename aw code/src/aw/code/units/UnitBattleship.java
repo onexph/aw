@@ -22,11 +22,11 @@ public class UnitBattleship extends Unit {
         this.driveType = Drive.ship;
         this.gas = 99;
         this.ammunition = 6;
-        this.currentHP = HP;
+        this.currentHealth = health;
         this.currentGas = gas;
         this.currentAmmo = ammunition;
         //TODO balancing
-        //this.strength = 99;
+        //this.defStrength = 99;
         this.mobility = 5;
         this.vision = 3;
         this.rangeLow = 3;

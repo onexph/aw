@@ -22,11 +22,11 @@ public class UnitCruiser extends Unit {
         this.driveType = Drive.transport;
         this.gas = 99;
         this.ammunition = 9;
-        this.currentHP = HP;
+        this.currentHealth = health;
         this.currentGas = gas;
         this.currentAmmo = ammunition;
         //TODO balancing
-        //this.strength = 99;
+        //this.defStrength = 99;
         this.mobility = 6;
         this.vision = 5;
         this.rangeLow = 1;

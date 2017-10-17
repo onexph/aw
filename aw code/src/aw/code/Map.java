@@ -1,7 +1,5 @@
 package aw.code;
 
-import javafx.scene.image.ImageView;
-
 /**
  * contains the map and lets you interact with it (by moving units)
  * @author minf102322
@@ -28,4 +26,7 @@ public class Map {
     //TODO find something other than char than can display transparent images
     
     //XXX maybe topography later
+    
+    //unit attack
+    //unit build
 }

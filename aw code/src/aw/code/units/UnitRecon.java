@@ -21,10 +21,10 @@ public class UnitRecon extends Unit {
         this.unitType = UnitType.vehicle;
         this.driveType = Drive.tireA;
         this.gas = 80;
-        this.currentHP = HP;
+        this.currentHealth = health;
         this.currentGas = gas;
         //TODO balancing
-        //this.strength = 99;
+        //this.defStrength = 99;
         this.mobility = 8;
         this.vision = 5;
         this.rangeLow = 1;

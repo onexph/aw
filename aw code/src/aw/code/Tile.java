@@ -7,10 +7,16 @@ package aw.code;
  */
 public class Tile {
     
+    /**
+     * coordinates of tile
+     */
+    public int x;
+    public int y;
+    
     /** 
      * Things on a tile
      */
-    Unit unit;
-    TileContent tileContent;
+    public Unit unit;
+    public TileContent tileContent;
     
 }

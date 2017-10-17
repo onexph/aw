@@ -10,7 +10,7 @@ public class UnitGunboat extends Unit {
 
     @Override
     public void create(int x, int y) {
-        this.name = "Gunboat";
+        this.name = "Missile Boat";
         this.x = x;
         this.y = y;
         this.hasMoved = true;
@@ -22,11 +22,11 @@ public class UnitGunboat extends Unit {
         this.driveType = Drive.ship;
         this.gas = 99;
         this.ammunition = 1;
-        this.currentHP = HP;
+        this.currentHealth = health;
         this.currentGas = gas;
         this.currentAmmo = ammunition;
         //TODO balancing
-        //this.strength = 99;
+        //this.defStrength = 99;
         this.mobility = 7;
         this.vision = 2;
         this.rangeLow = 1;

@@ -21,10 +21,10 @@ public class UnitLander extends Unit {
         this.unitType = UnitType.ship;
         this.driveType = Drive.transport;
         this.gas = 99;
-        this.currentHP = HP;
+        this.currentHealth = health;
         this.currentGas = gas;
         //TODO balancing
-        //this.strength = 99;
+        //this.defStrength = 99;
         this.mobility = 6;
         this.vision = 1;
         this.rangeLow = 1;

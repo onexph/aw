@@ -1,7 +1,7 @@
 package aw.code;
 
 import aw.code.Map.Faction;
-import aw.code.units.guns.Gun;
+import java.util.EnumSet;
 
 /**
  * A unit 
@@ -9,6 +9,7 @@ import aw.code.units.guns.Gun;
  */
 public abstract class Unit {
     //TODO special abilities (battleship, flare, rig, at gun counter, transport units
+    //TODO flavour text, description etc.
     
     //<editor-fold defaultstate="collapsed" desc="attributes and shit">
     public String name;
@@ -21,9 +22,8 @@ public abstract class Unit {
     
     //TODO image
     
-    /**
-     * tells if unit has acted already this turn
-     */
+    
+    //tells if unit has acted already this turn
     protected boolean hasMoved;
     
     //faction of the unit
@@ -54,21 +54,28 @@ public abstract class Unit {
     }
     
     protected AttackMode attackMode;
+    protected EnumSet<UnitType> canAttack;
     protected UnitType unitType;
     protected Drive driveType;
     
     /**
      * stats of the unit
      */
-    protected final int HP = 100;
+    protected final int health = 100;
     protected int gas;
+    /**
+     * ammo of main gun,
+     * in case of sub gun set to -1
+     */
     protected int ammunition;
     //current usables
-    protected int currentHP;
+    protected int currentHealth;
     protected int currentGas;
     protected int currentAmmo;
+    //the attack
+    protected int attStrength;
     //the defense
-    protected int strength;
+    protected int defStrength;
     //how far a unit can move in 1 turn
     protected int mobility;
     //how far a unit can see
@@ -78,12 +85,6 @@ public abstract class Unit {
     protected int rangeHigh;
     //XXX lvl later?
     
-    /**
-     * equipment of the unit
-     */
-    //the attack
-    protected Gun MainGun;
-    protected Gun SubGun;
 //</editor-fold>
 
     //<editor-fold defaultstate="collapsed" desc="get set">
@@ -135,8 +136,8 @@ public abstract class Unit {
         return unitType;
     }
     
-    public int getStrength() {
-        return strength;
+    public int getDefStrength() {
+        return defStrength;
     }
     
     public int getMobility() {
@@ -147,18 +148,16 @@ public abstract class Unit {
         return vision;
     }
     
-    public Gun getMainGun() {
-        return MainGun;
-    }
-    
-    public Gun getSubGun() {
-        return SubGun;
-    }
-    
     public Drive getDriveType() {
         return driveType;
     }
 //</editor-fold>
+
+    public Unit(int x, int y, Faction faction) {
+        this.x = x;
+        this.y = y;
+        this.faction = faction;
+    }
     
     
     
@@ -194,32 +193,6 @@ public abstract class Unit {
     public void move(int x, int y) {
         //TODO check movement radius
         //TODO make it plan a route so ambushes can happen
-    }
-    
-    /**
-     * tell unit to attack on x,y coordinates
-     * @param x x-coordinate
-     * @param y y-coordinate
-     */
-    public void attack(int x, int y) {
-        
-    }
-    
-    /**
-     * load unit into transport unit at x,y
-     * @param x x-coordinate
-     * @param y y-coordinate
-     */
-    public void load(int x, int y) {
-        
-    }
-    
-    /**
-     * tell unit to capture building
-     */
-    public void capture() {
-        //captures building on current tile
-        //may require move(x,y) to building before selecting this option
     }
     
     /**

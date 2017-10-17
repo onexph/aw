@@ -21,7 +21,10 @@ public abstract class Terrain implements TileContent {
      */
     private int cover;
     
-    
+    /**
+     * how many mobility points it costs to traverse this terrain
+     */
+    private int mobilityCost;
     
     //methods
     

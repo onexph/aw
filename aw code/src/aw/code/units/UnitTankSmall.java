@@ -1,7 +1,6 @@
 package aw.code.units;
 
 import aw.code.Unit;
-import aw.code.units.guns.Gun;
 
 /**
  *
@@ -23,16 +22,14 @@ public class UnitTankSmall extends Unit {
         this.driveType = Drive.tank;
         this.gas = 70;
         this.ammunition = 6;
-        this.currentHP = HP;
+        this.currentHealth = health;
         this.currentGas = gas;
         this.currentAmmo = ammunition;
         //TODO balancing
-        //this.strength = 99;
+        //this.defStrength = 99;
         this.mobility = 6;
         this.vision = 3;
         this.rangeLow = 1;
         this.rangeHigh = 1;
-        this.MainGun = new Gun("Tank Gun");
-        this.SubGun = new Gun("Machine Gun");
     }
 }

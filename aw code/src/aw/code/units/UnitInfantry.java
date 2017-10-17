@@ -21,10 +21,10 @@ public class UnitInfantry extends Unit {
         this.unitType = UnitType.infantry;
         this.driveType = Drive.infantry;
         this.gas = 99;
-        this.currentHP = HP;
+        this.currentHealth = health;
         this.currentGas = gas;
         //TODO balancing
-        //this.strength = 99;
+        //this.defStrength = 99;
         this.mobility = 3;
         this.vision = 2;
         this.rangeLow = 1;

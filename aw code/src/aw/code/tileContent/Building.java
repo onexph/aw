@@ -33,7 +33,17 @@ public abstract class Building implements TileContent {
     /**
      * if a building grants you funds
      */
-    private boolean generatesFunds;
+    public boolean generatesFunds;
+
+    public Building(int x, int y, Faction faction) {
+        this.remainingCaptureTime = captureTime;
+        this.x = x;
+        this.y = y;
+        this.faction = faction;
+    }
+    
+    
+    
     
     
     /**
