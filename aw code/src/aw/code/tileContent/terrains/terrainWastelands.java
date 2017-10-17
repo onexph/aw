@@ -8,4 +8,5 @@ import aw.code.tileContent.Terrain;
  */
 public class terrainWastelands extends Terrain {
     
+    public final int cover = 2;
 }

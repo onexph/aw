@@ -6,9 +6,9 @@ import aw.code.tileContent.Building;
  *
  * @author minf102322
  */
-public class BuildingCity extends Building {
+public class BuildingRadar extends Building {
     
     public final int cover = 3;
-    private int fundsGenerated = 1000;
+    private int fundsGenerated = 0;
     private int remainingCaptureTime;
 }

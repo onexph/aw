@@ -8,4 +8,7 @@ import aw.code.tileContent.Building;
  */
 public class BuildingFactory extends Building {
     
+    public final int cover = 3;
+    private int fundsGenerated = 1000;
+    private int remainingCaptureTime;
 }

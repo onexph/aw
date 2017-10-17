@@ -8,4 +8,7 @@ import aw.code.tileContent.Building;
  */
 public class BuildingAirport extends Building {
     
+    public final int cover = 3;
+    private int fundsGenerated = 1000;
+    private int remainingCaptureTime;
 }

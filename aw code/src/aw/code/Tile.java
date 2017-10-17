@@ -7,11 +7,9 @@ package aw.code;
  */
 public class Tile {
     
-    
     /** 
      * Things on a tile
      */
-    
     Unit unit;
     TileContent tileContent;
     

@@ -8,4 +8,5 @@ import aw.code.tileContent.Terrain;
  */
 public class terrainMist extends Terrain {
     
+    public final int cover = 1;
 }

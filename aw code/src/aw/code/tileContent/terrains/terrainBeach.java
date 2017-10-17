@@ -8,4 +8,6 @@ import aw.code.tileContent.Terrain;
  */
 public class terrainBeach extends Terrain {
     
+    public final int cover = 0;
+    
 }
