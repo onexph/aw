@@ -1,25 +1,31 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package aw.code.tileContent.buildings;
 
-import aw.code.Map.Faction;
+import aw.code.Map;
 import aw.code.Unit;
 import aw.code.tileContent.Building;
 
 /**
  *
- * @author minf102322
+ * @author Seb
  */
-public class BuildingAirport extends Building {
+public class BuildingTempSeaport extends Building{
     
-    public final int cover = 3;
+    public final int cover = 1;
     private int fundsGenerated = 1000;
     private int remainingCaptureTime;
 
-    public BuildingAirport(int x, int y, Faction faction) {
+    public BuildingTempSeaport(int x, int y, Map.Faction faction) {
         super(x, y, faction);
         this.remainingCaptureTime = captureTime;
-        this.generatesFunds = true;
+        this.generatesFunds = false;
     }
-
+    
+    
     /**
      * @param unit unit on the tile
      * @return mobility cost of the tile
@@ -33,8 +39,8 @@ public class BuildingAirport extends Building {
             case tireB: return 1;
             case tank: return 1;
             case air: return 1;
-            case ship: return 999;
-            case transport: return 999;
+            case ship: return 1;
+            case transport: return 1;
             default: return 999;
         }
     }

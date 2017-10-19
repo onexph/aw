@@ -2,6 +2,7 @@ package aw.code.tileContent;
 
 import aw.code.Map.Faction;
 import aw.code.TileContent;
+import aw.code.Unit;
 
 /**
  *
@@ -42,10 +43,6 @@ public abstract class Building implements TileContent {
         this.faction = faction;
     }
     
-    
-    
-    
-    
     /**
      * @return cover of tile
      */
@@ -60,4 +57,14 @@ public abstract class Building implements TileContent {
     public int getRemCapTime() {
         return remainingCaptureTime;
     }
+    
+    /**
+     * reacts on capture of city
+     * @param unit unit which captured the city
+     */
+    public void captured(Unit unit) {
+        this.faction = unit.getFaction();
+        this.remainingCaptureTime = captureTime;
+    }
+
 }

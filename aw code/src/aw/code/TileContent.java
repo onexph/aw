@@ -11,8 +11,9 @@ public interface TileContent {
     public int getCover();
     
     /**
+     * @param unit unit on the tile
      * @return mobility cost of the tile
      */
-    public int getMobilityCost();
+    public int getMobilityCost(Unit unit);
     
 }

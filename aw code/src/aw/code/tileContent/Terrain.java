@@ -26,6 +26,15 @@ public abstract class Terrain implements TileContent {
      */
     private int mobilityCost;
     
+    //constructor
+
+    public Terrain(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+    
+    
+    
     //methods
     
     /**
