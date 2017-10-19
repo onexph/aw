@@ -11,7 +11,6 @@ import aw.code.tileContent.Building;
 public class BuildingFactory extends Building {
     
     public final int cover = 3;
-    private int fundsGenerated = 1000;
     private int remainingCaptureTime;
 
     public BuildingFactory(int x, int y, Map.Faction faction) {

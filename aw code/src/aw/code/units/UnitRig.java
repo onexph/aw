@@ -8,6 +8,12 @@ import aw.code.Unit;
  * @author minf102322
  */
 public class UnitRig extends Unit {
+    
+    /**
+     * loaded units
+     * can load infantry and bazooka
+     */
+    Unit[] load = new Unit[1];
 
     public UnitRig(int x, int y, Map.Faction faction) {
         super(x, y, faction);

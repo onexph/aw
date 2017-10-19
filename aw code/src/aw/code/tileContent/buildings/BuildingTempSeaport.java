@@ -16,7 +16,6 @@ import aw.code.tileContent.Building;
 public class BuildingTempSeaport extends Building{
     
     public final int cover = 1;
-    private int fundsGenerated = 1000;
     private int remainingCaptureTime;
 
     public BuildingTempSeaport(int x, int y, Map.Faction faction) {

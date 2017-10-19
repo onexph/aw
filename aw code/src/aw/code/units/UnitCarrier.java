@@ -8,6 +8,12 @@ import aw.code.Unit;
  * @author minf102322
  */
 public class UnitCarrier extends Unit {
+    
+    /**
+     * loaded units
+     * can load air units
+     */
+    Unit[] load = new Unit[2];
 
     public UnitCarrier(int x, int y, Map.Faction faction) {
         super(x, y, faction);

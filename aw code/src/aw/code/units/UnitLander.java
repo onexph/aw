@@ -8,6 +8,12 @@ import aw.code.Unit;
  * @author minf102322
  */
 public class UnitLander extends Unit {
+    
+    /**
+     * loaded units
+     * can load ground units
+     */
+    Unit[] load = new Unit[2];
 
     public UnitLander(int x, int y, Map.Faction faction) {
         super(x, y, faction);

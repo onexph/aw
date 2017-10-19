@@ -40,10 +40,10 @@ public class UnitSubmarine extends Unit {
     
     /**
      * fuel usage for submarines depends on submerged state
-     * @return 1 for afloat, 5 for submerged
      */
     @Override
-    public int fuelUsage() {
-        return this.submerged ? 5 : 1;
+    public void fuelUsage() {
+        int f = this.submerged ? 5 : 1;
+        this.gas =- f;
     }
 }

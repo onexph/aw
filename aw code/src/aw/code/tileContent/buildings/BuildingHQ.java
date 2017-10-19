@@ -11,7 +11,6 @@ import aw.code.tileContent.Building;
 public class BuildingHQ extends Building {
     
     public final int cover = 4;
-    private int fundsGenerated = 1000;
     private int remainingCaptureTime;
 
     public BuildingHQ(int x, int y, Map.Faction faction) {

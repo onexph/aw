@@ -11,8 +11,9 @@ public class UnitTHeli extends Unit {
     
     /**
      * loaded units
+     * can load infantry and bazooka
      */
-    Unit[] load = new Unit[2];
+    Unit[] load = new Unit[1];
 
     public UnitTHeli(int x, int y, Map.Faction faction) {
         super(x, y, faction);

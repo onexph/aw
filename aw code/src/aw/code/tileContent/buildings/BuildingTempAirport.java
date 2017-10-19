@@ -16,7 +16,6 @@ import aw.code.tileContent.Building;
 public class BuildingTempAirport extends Building{
     
     public final int cover = 1;
-    private int fundsGenerated = 1000;
     private int remainingCaptureTime;
 
     public BuildingTempAirport(int x, int y, Map.Faction faction) {

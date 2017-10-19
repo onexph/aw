@@ -16,7 +16,6 @@ import aw.code.tileContent.Building;
 public class BuildingComTower extends Building{
     
     public final int cover = 2;
-    private int fundsGenerated = 1000;
     private int remainingCaptureTime;
 
     public BuildingComTower(int x, int y, Map.Faction faction) {

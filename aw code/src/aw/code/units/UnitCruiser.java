@@ -8,6 +8,12 @@ import aw.code.Unit;
  * @author minf102322
  */
 public class UnitCruiser extends Unit {
+    
+    /**
+     * loaded units
+     * can load helis
+     */
+    Unit[] load = new Unit[2];
 
     public UnitCruiser(int x, int y, Map.Faction faction) {
         super(x, y, faction);

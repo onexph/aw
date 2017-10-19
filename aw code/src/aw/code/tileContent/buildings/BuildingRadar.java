@@ -11,7 +11,6 @@ import aw.code.tileContent.Building;
 public class BuildingRadar extends Building {
     
     public final int cover = 3;
-    private int fundsGenerated = 0;
     private int remainingCaptureTime;
 
     public BuildingRadar(int x, int y, Map.Faction faction) {

@@ -8,6 +8,11 @@ import aw.code.Unit;
  * @author minf102322
  */
 public class UnitGunboat extends Unit {
+    /**
+     * loaded units
+     * can load infantry and bazooka
+     */
+    Unit[] load = new Unit[1];
 
     public UnitGunboat(int x, int y, Map.Faction faction) {
         super(x, y, faction);

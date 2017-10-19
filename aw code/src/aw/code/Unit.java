@@ -206,20 +206,17 @@ public abstract class Unit {
      * tell unit to wait (do nothing)
      */
     public void unitWait() {
-       
+       //visibility check if FOW
+       this.fuelUsage();
     }
     
     /**
-     * calculates fuel usage for this unit
-     * @return 
+     * calculates fuel usage for this unit 
      */
-    public int fuelUsage() {
+    public void fuelUsage() {
         switch (this.unitType) {
-            case infantry: return 0;
-            case vehicle: return 0;
-            case air: return 5;
-            case heli: return 2;
-            default: return 0;
+            case air: this.gas =- 5;
+            case heli: this.gas =- 2;
         }
     }
     
