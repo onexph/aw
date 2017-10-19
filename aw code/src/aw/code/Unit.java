@@ -59,6 +59,12 @@ public abstract class Unit {
     protected Drive driveType;
     
     /**
+     * names of the weapons
+     */
+    protected String mainGun;
+    protected String subGun;
+    
+    /**
      * stats of the unit
      */
     protected final int health = 100;
@@ -157,6 +163,7 @@ public abstract class Unit {
         this.x = x;
         this.y = y;
         this.faction = faction;
+        this.initialize();
     }
     
     
@@ -165,10 +172,8 @@ public abstract class Unit {
     
     /**
      * creates unit at given coordinates
-     * @param x x-coordinate
-     * @param y y-coordinate
      */
-    public abstract void create(int x, int y); 
+    protected abstract void initialize(); 
     
     /**
      * highlights tiles this unit can attack IF attackMode = ranged

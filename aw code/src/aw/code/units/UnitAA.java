@@ -14,17 +14,15 @@ public class UnitAA extends Unit {
     }
 
     @Override
-    public void create(int x, int y) {
+    protected final void initialize() {
         this.name = "Anti-Air";
-        this.x = x;
-        this.y = y;
-        this.hasMoved = true;
-        //TODO how?
-        //this.faction = 
+        this.hasMoved = true; 
         this.cost = 7000;
         this.attackMode = AttackMode.direct;
         this.unitType = UnitType.vehicle;
         this.driveType = Drive.tank;
+        this.mainGun = "Cannon";
+        this.subGun = "-";
         this.gas = 60;
         this.ammunition = 6;
         this.currentHealth = health;
@@ -34,7 +32,5 @@ public class UnitAA extends Unit {
         this.vision = 3;
         this.rangeLow = 1;
         this.rangeHigh = 1;
-        this.MainGun = new Gun("Vulcan Cannon");
-        this.SubGun = null;
     }   
 }

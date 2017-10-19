@@ -1,5 +1,6 @@
 package aw.code.units;
 
+import aw.code.Map;
 import aw.code.Unit;
 
 /**
@@ -8,30 +9,28 @@ import aw.code.Unit;
  */
 public class UnitBattleship extends Unit {
 
+    public UnitBattleship(int x, int y, Map.Faction faction) {
+        super(x, y, faction);
+    }
+
     @Override
-    public void create(int x, int y) {
+    protected final void initialize() {
         this.name = "Battleship";
-        this.x = x;
-        this.y = y;
         this.hasMoved = true;
-        //TODO how?
-        //this.faction = 
         this.cost = 25000;
         this.attackMode = AttackMode.ranged;
         this.unitType = UnitType.ship;
         this.driveType = Drive.ship;
+        this.mainGun = "Cannon";
+        this.subGun = "-";
         this.gas = 99;
         this.ammunition = 6;
         this.currentHealth = health;
         this.currentGas = gas;
         this.currentAmmo = ammunition;
-        //TODO balancing
-        //this.defStrength = 99;
         this.mobility = 5;
         this.vision = 3;
         this.rangeLow = 3;
         this.rangeHigh = 5;
-        this.MainGun = new Gun("Cannon");
-        this.SubGun = null; 
     }   
 }

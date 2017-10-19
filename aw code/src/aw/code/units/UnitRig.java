@@ -1,5 +1,6 @@
 package aw.code.units;
 
+import aw.code.Map;
 import aw.code.Unit;
 
 /**
@@ -8,28 +9,26 @@ import aw.code.Unit;
  */
 public class UnitRig extends Unit {
 
+    public UnitRig(int x, int y, Map.Faction faction) {
+        super(x, y, faction);
+    }
+
     @Override
-    public void create(int x, int y) {
+    protected final void initialize() {
         this.name = "Mobile Workshop";
-        this.x = x;
-        this.y = y;
         this.hasMoved = true;
-        //TODO how?
-        //this.faction = 
         this.cost = 5000;
         this.attackMode = AttackMode.none;
         this.unitType = UnitType.vehicle;
         this.driveType = Drive.tank;
+        this.mainGun = "-";
+        this.subGun = "-";
         this.gas = 99;
         this.currentHealth = health;
         this.currentGas = gas;
-        //TODO balancing
-        //this.defStrength = 99;
         this.mobility = 6;
         this.vision = 1;
         this.rangeLow = 1;
         this.rangeHigh = 1;
-        this.MainGun = null;
-        this.SubGun = null;
     }
 }

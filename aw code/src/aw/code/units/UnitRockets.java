@@ -1,5 +1,6 @@
 package aw.code.units;
 
+import aw.code.Map;
 import aw.code.Unit;
 
 /**
@@ -8,30 +9,28 @@ import aw.code.Unit;
  */
 public class UnitRockets extends Unit {
 
+    public UnitRockets(int x, int y, Map.Faction faction) {
+        super(x, y, faction);
+    }
+
     @Override
-    public void create(int x, int y) {
+    protected final void initialize() {
         this.name = "Rockets";
-        this.x = x;
-        this.y = y;
         this.hasMoved = true;
-        //TODO how?
-        //this.faction = 
         this.cost = 15000;
         this.attackMode = AttackMode.ranged;
         this.unitType = UnitType.vehicle;
         this.driveType = Drive.tireA;
+        this.mainGun = "Rocket";
+        this.subGun = "-";
         this.gas = 50;
         this.ammunition = 5;
         this.currentHealth = health;
         this.currentGas = gas;
         this.currentAmmo = ammunition;
-        //TODO balancing
-        //this.defStrength = 99;
         this.mobility = 5;
         this.vision = 5;
         this.rangeLow = 3;
         this.rangeHigh = 5;
-        this.MainGun = new Gun("Rocket");
-        this.SubGun = null;
     }    
 }
