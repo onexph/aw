@@ -180,7 +180,9 @@ public abstract class Unit {
      * when holding down cancel key over unit
      */
     public void showFireRadius() {
-        
+        if (this.getAttackMode() == AttackMode.ranged) {
+            //TODO fire radius
+        }
     }
     
     /**
@@ -204,8 +206,30 @@ public abstract class Unit {
      * tell unit to wait (do nothing)
      */
     public void unitWait() {
-        
+       
     }
+    
+    /**
+     * calculates fuel usage for this unit
+     * @return 
+     */
+    public int fuelUsage() {
+        switch (this.unitType) {
+            case infantry: return 0;
+            case vehicle: return 0;
+            case air: return 5;
+            case heli: return 2;
+            default: return 0;
+        }
+    }
+    
+    
+    /**
+     * determines if unit can be loaded into loader unit
+     * @param loader loader unit
+     * @return true if loadable
+     */
+//    public abstract boolean canBeLoaded(Unit loader);
     
     //XXX maybe implement commander units later
 }

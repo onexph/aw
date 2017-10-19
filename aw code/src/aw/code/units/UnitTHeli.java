@@ -8,6 +8,11 @@ import aw.code.Unit;
  * @author minf102322
  */
 public class UnitTHeli extends Unit {
+    
+    /**
+     * loaded units
+     */
+    Unit[] load = new Unit[2];
 
     public UnitTHeli(int x, int y, Map.Faction faction) {
         super(x, y, faction);

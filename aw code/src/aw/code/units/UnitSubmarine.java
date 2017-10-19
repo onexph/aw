@@ -8,6 +8,8 @@ import aw.code.Unit;
  * @author minf102322
  */
 public class UnitSubmarine extends Unit {
+    
+    private boolean submerged;
 
     public UnitSubmarine(int x, int y, Map.Faction faction) {
         super(x, y, faction);
@@ -32,5 +34,16 @@ public class UnitSubmarine extends Unit {
         this.vision = 5;
         this.rangeLow = 1;
         this.rangeHigh = 1;
+        //special stats
+        this.submerged = true;
     }    
+    
+    /**
+     * fuel usage for submarines depends on submerged state
+     * @return 1 for afloat, 5 for submerged
+     */
+    @Override
+    public int fuelUsage() {
+        return this.submerged ? 5 : 1;
+    }
 }

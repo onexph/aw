@@ -33,4 +33,12 @@ public class UnitBattleship extends Unit {
         this.rangeLow = 3;
         this.rangeHigh = 5;
     }   
+    
+    /**
+     * battleship can attack after moving, so different fire radius calc
+     */
+    @Override
+    public void showFireRadius() {
+        
+    }
 }
