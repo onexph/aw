@@ -72,27 +72,26 @@ public abstract class Unit {
     /**
      * the attack mode of the unit
      */
-    public enum AttackMode {
+    public static enum AttackMode {
         none, direct, ranged;
     }
     
     /**
      * the type of the unit
      */
-    public enum UnitType {
+    public static enum UnitType {
         infantry, vehicle, air, heli, ship, sub;
     }
     
     /**
      * how the unit moves
      */
-    public enum Drive {
+    public static enum Drive {
         infantry, bazooka, tireA, tireB, tank, air, ship, transport; 
     }
     
     protected AttackMode attackMode;
     protected EnumSet<UnitType> canAttack;
-    
     protected UnitType unitType;
     protected Drive driveType;
     
@@ -222,7 +221,7 @@ public abstract class Unit {
      * @param defender
      * @return 
      */
-    public int[] getIndex(Unit attacker, Unit defender) {
+    public static int[] getIndex(Unit attacker, Unit defender) {
         int[] indexes = new int[2];
         //<editor-fold defaultstate="collapsed" desc="attacker index">
         //the attacker index
@@ -325,7 +324,6 @@ public abstract class Unit {
      * tell unit to wait (do nothing)
      */
     public void unitWait() {
-       //visibility check if FOW
        this.fuelUsage();
     }
     
@@ -341,10 +339,17 @@ public abstract class Unit {
     
     /**
      * determines if this unit can attack the target
+     * @param defender target of attack
      * @return 
      */
-    boolean canAttack(Unit defender) {
-        return true;
+    public abstract boolean canAttack(Unit defender);
+    
+    /**
+     * attacks target unit
+     * @param defender target unit 
+     */
+    public void attack(Unit defender) {
+        
     }
     
     /**

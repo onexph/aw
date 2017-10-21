@@ -33,4 +33,9 @@ public class UnitAA extends Unit {
         this.rangeLow = 1;
         this.rangeHigh = 1;
     }   
+
+    @Override
+    public boolean canAttack(Unit defender) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
