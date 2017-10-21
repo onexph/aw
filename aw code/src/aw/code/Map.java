@@ -6,6 +6,7 @@ package aw.code;
  */
 public class Map {
     
+    
     /**
      * the factions
      */
