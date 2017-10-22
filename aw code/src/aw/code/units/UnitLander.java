@@ -14,6 +14,7 @@ public class UnitLander extends Unit {
      * can load ground units
      */
     Unit[] load = new Unit[2];
+    
 
     public UnitLander(int x, int y, Map.Faction faction) {
         super(x, y, faction);
@@ -30,11 +31,16 @@ public class UnitLander extends Unit {
         this.mainGun = "-";
         this.subGun = "-";
         this.gas = 99;
-        this.currentHealth = health;
+        this.currentHealth = MAXHEALTH;
         this.currentGas = gas;
         this.mobility = 6;
         this.vision = 1;
         this.rangeLow = 1;
         this.rangeHigh = 1;
     } 
+
+    @Override
+    public int canAttack(Unit defender) {
+        return 0;
+    }
 }

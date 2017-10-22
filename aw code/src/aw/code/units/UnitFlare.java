@@ -2,6 +2,7 @@ package aw.code.units;
 
 import aw.code.Map;
 import aw.code.Unit;
+import java.util.EnumSet;
 
 /**
  *
@@ -9,6 +10,9 @@ import aw.code.Unit;
  */
 public class UnitFlare extends Unit {
 
+    protected static EnumSet<UnitType> canAttack = 
+            EnumSet.of(UnitType.infantry, UnitType.vehicle,UnitType.heli, UnitType.meteor);
+    
     public UnitFlare(int x, int y, Map.Faction faction) {
         super(x, y, faction);
     }
@@ -25,7 +29,7 @@ public class UnitFlare extends Unit {
         this.subGun = "Machine Gun";
         this.gas = 60;
         this.ammunition = 3;
-        this.currentHealth = health;
+        this.currentHealth = MAXHEALTH;
         this.currentGas = gas;
         this.currentAmmo = ammunition;
         this.mobility = 5;
@@ -33,4 +37,9 @@ public class UnitFlare extends Unit {
         this.rangeLow = 1;
         this.rangeHigh = 1;
     }    
+
+    @Override
+    public int canAttack(Unit defender) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

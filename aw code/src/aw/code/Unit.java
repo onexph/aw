@@ -67,8 +67,6 @@ public abstract class Unit {
     //cost of the unit
     protected int cost;
 
-    
-    
     /**
      * the attack mode of the unit
      */
@@ -80,7 +78,7 @@ public abstract class Unit {
      * the type of the unit
      */
     public static enum UnitType {
-        infantry, vehicle, air, heli, ship, sub;
+        infantry, vehicle, air, heli, ship, sub, meteor;
     }
     
     /**
@@ -104,7 +102,7 @@ public abstract class Unit {
     /**
      * stats of the unit
      */
-    protected final int health = 100;
+    protected static final int MAXHEALTH = 100;
     protected int gas;
     /**
      * ammo of main gun,
@@ -340,16 +338,22 @@ public abstract class Unit {
     /**
      * determines if this unit can attack the target
      * @param defender target of attack
-     * @return 
+     * @return  not 1 or 2 if cannot attack
+     *          1 if can attack and use main gun dmg table
+     *          2 if can attack and use sub gun dmg table
      */
-    public abstract boolean canAttack(Unit defender);
+    public abstract int canAttack(Unit defender);
     
     /**
      * attacks target unit
      * @param defender target unit 
      */
     public void attack(Unit defender) {
-        
+        if (this.canAttack(defender) == 1) {
+            int defDmg = Math.floor()
+        } else if (this.canAttack(defender) == 2) {
+            
+        } 
     }
     
     /**

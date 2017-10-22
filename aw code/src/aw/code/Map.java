@@ -10,8 +10,15 @@ public class Map {
     /**
      * the factions
      */
-    public enum Faction {
+    public static enum Faction {
         green, blue, red, black,neutral;
+    }
+    
+    /**
+     * the possible weather conditions
+     */
+    public static enum Weather {
+        clear, rain, sandstorm, snow;
     }
     
     /**

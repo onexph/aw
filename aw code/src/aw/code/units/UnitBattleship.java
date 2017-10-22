@@ -2,12 +2,16 @@ package aw.code.units;
 
 import aw.code.Map;
 import aw.code.Unit;
+import java.util.EnumSet;
 
 /**
  *
  * @author minf102322
  */
 public class UnitBattleship extends Unit {
+    
+    protected static EnumSet<UnitType> canAttack = 
+            EnumSet.of(UnitType.infantry, UnitType.vehicle,UnitType.ship, UnitType.sub, UnitType.meteor);
 
     public UnitBattleship(int x, int y, Map.Faction faction) {
         super(x, y, faction);
@@ -25,7 +29,7 @@ public class UnitBattleship extends Unit {
         this.subGun = "-";
         this.gas = 99;
         this.ammunition = 6;
-        this.currentHealth = health;
+        this.currentHealth = MAXHEALTH;
         this.currentGas = gas;
         this.currentAmmo = ammunition;
         this.mobility = 5;
@@ -40,5 +44,10 @@ public class UnitBattleship extends Unit {
     @Override
     public void showFireRadius() {
         
+    }
+
+    @Override
+    public int canAttack(Unit defender) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
