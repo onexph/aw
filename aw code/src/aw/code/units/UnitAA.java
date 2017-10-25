@@ -40,7 +40,7 @@ public class UnitAA extends Unit {
     }   
 
     @Override
-    public int canAttack(Unit defender) {
-        return 0;
+    public boolean canAttack(Unit defender) {
+        throw new UnsupportedOperationException();
     }
 }

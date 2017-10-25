@@ -44,7 +44,7 @@ public class UnitGunboat extends Unit {
     }  
 
     @Override
-    public int canAttack(Unit defender) {
+    public boolean canAttack(Unit defender) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

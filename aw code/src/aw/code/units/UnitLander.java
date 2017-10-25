@@ -40,7 +40,7 @@ public class UnitLander extends Unit {
     } 
 
     @Override
-    public int canAttack(Unit defender) {
+    public boolean canAttack(Unit defender) {
         return 0;
     }
 }

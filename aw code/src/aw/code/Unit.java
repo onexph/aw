@@ -337,23 +337,29 @@ public abstract class Unit {
     
     /**
      * determines if this unit can attack the target
-     * @param defender target of attack
-     * @return  not 1 or 2 if cannot attack
-     *          1 if can attack and use main gun dmg table
-     *          2 if can attack and use sub gun dmg table
+     * @param defender
+     * @return 
      */
-    public abstract int canAttack(Unit defender);
+    public abstract boolean canAttack(Unit defender);
+    
+    
+    /**
+     * checks which DmgTable is to be used against defending unit
+     * @param defender
+     * @return 
+     */
+    public int getDmgTable(Unit defender) {
+        throw new UnsupportedOperationException();
+    }
     
     /**
      * attacks target unit
      * @param defender target unit 
+     * @param dmgTable 
+     * @return  
      */
-    public void attack(Unit defender) {
-        if (this.canAttack(defender) == 1) {
-            int defDmg = Math.floor()
-        } else if (this.canAttack(defender) == 2) {
-            
-        } 
+    public int attack(Unit defender, int dmgTable) {
+        
     }
     
     /**
