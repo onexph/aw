@@ -19,19 +19,19 @@ public class UnitTankSmall extends Unit {
 
     @Override
     protected final void initialize() {
-        this.name = "Tank";
-        this.hasMoved = true;
+        this.setName("Tank");
+        this.setHasMoved(true);
         this.cost = 7000;
         this.attackMode = AttackMode.direct;
         this.unitType = UnitType.vehicle;
-        this.driveType = Drive.tank;
+        this.setDriveType(Drive.tank);
         this.mainGun = "Tank Gun";
         this.subGun = "Machine Gun";
         this.gas = 70;
         this.ammunition = 6;
-        this.currentHealth = MAXHEALTH;
-        this.currentGas = gas;
-        this.currentAmmo = ammunition;
+        this.setCurrentHealth(getMAXHEALTH());
+        this.setCurrentGas(getGas());
+        this.setCurrentAmmo(getAmmunition());
         this.mobility = 6;
         this.vision = 3;
         this.rangeLow = 1;

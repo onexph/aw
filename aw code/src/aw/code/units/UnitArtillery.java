@@ -19,19 +19,19 @@ public class UnitArtillery extends Unit {
 
     @Override
     protected final void initialize() {
-        this.name = "Artillery";
-        this.hasMoved = true;
+        this.setName("Artillery");
+        this.setHasMoved(true);
         this.cost = 6000;
         this.attackMode = AttackMode.ranged;
         this.unitType = UnitType.vehicle;
-        this.driveType = Drive.tank;
+        this.setDriveType(Drive.tank);
         this.mainGun = "Cannon";
         this.subGun = "-";
         this.gas = 50;
         this.ammunition = 6;
-        this.currentHealth = MAXHEALTH;
-        this.currentGas = gas;
-        this.currentAmmo = ammunition;
+        this.setCurrentHealth(getMAXHEALTH());
+        this.setCurrentGas(getGas());
+        this.setCurrentAmmo(getAmmunition());
         this.mobility = 5;
         this.vision = 3;
         this.rangeLow = 2;

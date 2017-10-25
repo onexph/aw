@@ -19,19 +19,19 @@ public class UnitHeli extends Unit {
 
     @Override
     protected final void initialize() {
-        this.name = "Battle Helicopter";
-        this.hasMoved = true;
+        this.setName("Battle Helicopter");
+        this.setHasMoved(true);
         this.cost = 9000;
         this.attackMode = AttackMode.direct;
         this.unitType = UnitType.heli;
-        this.driveType = Drive.air;
+        this.setDriveType(Drive.air);
         this.mainGun = "Air-Surface Missiles";
         this.subGun = "Machine Gun";
         this.gas = 99;
         this.ammunition = 6;
-        this.currentHealth = MAXHEALTH;
-        this.currentGas = gas;
-        this.currentAmmo = ammunition;
+        this.setCurrentHealth(getMAXHEALTH());
+        this.setCurrentGas(getGas());
+        this.setCurrentAmmo(getAmmunition());
         this.mobility = 6;
         this.vision = 2;
         this.rangeLow = 1;

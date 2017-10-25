@@ -19,19 +19,19 @@ public class UnitInterceptor extends Unit {
 
     @Override
     protected final void initialize() {
-        this.name = "Interceptor";
-        this.hasMoved = true;
+        this.setName("Interceptor");
+        this.setHasMoved(true);
         this.cost = 20000;
         this.attackMode = AttackMode.direct;
         this.unitType = UnitType.air;
-        this.driveType = Drive.air;
+        this.setDriveType(Drive.air);
         this.mainGun = "Anti-Air Missiles";
         this.subGun = "-";
         this.gas = 99;
         this.ammunition = 6;
-        this.currentHealth = MAXHEALTH;
-        this.currentGas = gas;
-        this.currentAmmo = ammunition;
+        this.setCurrentHealth(getMAXHEALTH());
+        this.setCurrentGas(getGas());
+        this.setCurrentAmmo(getAmmunition());
         this.mobility = 9;
         this.vision = 5;
         this.rangeLow = 1;

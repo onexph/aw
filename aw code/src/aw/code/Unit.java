@@ -12,18 +12,18 @@ public abstract class Unit {
     //TODO flavour text, description etc.
     
     //<editor-fold defaultstate="collapsed" desc="attributes and shit">
-    public String name;
+    protected String name;
     
     /**
      * coordinates of unit
      */
-    public int x;
-    public int y;
+    protected int x;
+    protected int y;
     
     //TODO image
     
     //arrays of raw damage numbers
-    private static final int[][] MAINGUNDMG =
+    protected static final int[][] MAINGUNDMG =
     //<editor-fold defaultstate="collapsed" desc="Main Gun Damage Table">
         /*Bazooka*/     {{85, 80, 55, 55, 25, 15, 55, 70, 85, 85, 75, 15, 65, 55, 55, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 35, 0},
         /*Tank*/        {85, 80, 75, 55, 35, 20, 30, 70, 85, 85, 75, 20, 75, 70, 70, 8, 8, 9, 9, 55, 18, 0, 0, 0, 18, 35, 0},
@@ -49,7 +49,7 @@ public abstract class Unit {
         /*Fighter*/     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 40, 45, 55, 75, 90, 45},
         /*Sea Plan*/    {80, 75, 45, 75, 65, 55, 50, 70, 80, 70, 75, 55, 65, 65, 55, 40, 105, 85, 45, 55, 65, 85, 95, 55}};
     //</editor-fold>
-    private static final int[][] SUBGUNDMG =
+    protected static final int[][] SUBGUNDMG =
     //<editor-fold defaultstate="collapsed" desc="Sub Gun Damage Table">
         /*Bazooka*/     {{18, 15, 5, 8, 5, 1, 35, 15, 35, 35, 20, 1},
         /*Tank*/        {40, 35, 8, 8, 5, 1, 1, 45, 55, 55, 45, 1},
@@ -129,82 +129,265 @@ public abstract class Unit {
 //</editor-fold>
 
     //<editor-fold defaultstate="collapsed" desc="get set">
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * @return the x
+     */
+    public int getX() {
+        return x;
+    }
+
+    /**
+     * @param x the x to set
+     */
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    /**
+     * @return the y
+     */
+    public int getY() {
+        return y;
+    }
+
+    /**
+     * @param y the y to set
+     */
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    /**
+     * @return the MAINGUNDMG
+     */
+    public static int[][] getMAINGUNDMG() {
+        return MAINGUNDMG;
+    }
+
+    /**
+     * @return the SUBGUNDMG
+     */
+    public static int[][] getSUBGUNDMG() {
+        return SUBGUNDMG;
+    }
+
+    /**
+     * @return the hasMoved
+     */
     public boolean isHasMoved() {
         return hasMoved;
     }
-    
+
+    /**
+     * @param hasMoved the hasMoved to set
+     */
     public void setHasMoved(boolean hasMoved) {
         this.hasMoved = hasMoved;
     }
 
-    public int getCurrentHealth() {
-        return currentHealth;
-    }
-
-    public void setCurrentHealth(int currentHealth) {
-        this.currentHealth = currentHealth;
-    }
-
-    public int getGas() {
-        return gas;
-    }
-    
-    public void setGas(int gas) {
-        this.gas = gas;
-    }
-    
-    public int getAmmunition() {
-        return ammunition;
-    }
-    
-    public void setAmmunition(int ammunition) {
-        this.ammunition = ammunition;
-    }
-    
-    public String getName() {
-        return name;
-    }
-    
-    public int getX() {
-        return x;
-    }
-    
-    public int getY() {
-        return y;
-    }
-    
+    /**
+     * @return the faction
+     */
     public Faction getFaction() {
         return faction;
     }
-    
+
+    /**
+     * @param faction the faction to set
+     */
+    public void setFaction(Faction faction) {
+        this.faction = faction;
+    }
+
+    /**
+     * @return the cost
+     */
+    public int getCost() {
+        return cost;
+    }
+
+    /**
+     * @return the attackMode
+     */
     public AttackMode getAttackMode() {
         return attackMode;
     }
-    
+
+    /**
+     * @return the canAttack
+     */
+    public EnumSet<UnitType> getCanAttack() {
+        return canAttack;
+    }
+
+    /**
+     * @return the unitType
+     */
     public UnitType getUnitType() {
         return unitType;
     }
 
-    public int getAttStrength() {
-        return attStrength;
-    }
-    
-    public int getDefStrength() {
-        return defStrength;
-    }
-    
-    public int getMobility() {
-        return mobility;
-    }
-    
-    public int getVision() {
-        return vision;
-    }
-    
+    /**
+     * @return the driveType
+     */
     public Drive getDriveType() {
         return driveType;
     }
-//</editor-fold>
+
+    /**
+     * @param driveType the driveType to set
+     */
+    public void setDriveType(Drive driveType) {
+        this.driveType = driveType;
+    }
+
+    /**
+     * @return the mainGun
+     */
+    public String getMainGun() {
+        return mainGun;
+    }
+
+    /**
+     * @return the subGun
+     */
+    public String getSubGun() {
+        return subGun;
+    }
+
+    /**
+     * @return the MAXHEALTH
+     */
+    public static int getMAXHEALTH() {
+        return MAXHEALTH;
+    }
+
+    /**
+     * @return the gas
+     */
+    public int getGas() {
+        return gas;
+    }
+
+    /**
+     * @return the ammunition
+     */
+    public int getAmmunition() {
+        return ammunition;
+    }
+
+    /**
+     * @return the currentHealth
+     */
+    public int getCurrentHealth() {
+        return currentHealth;
+    }
+
+    /**
+     * @param currentHealth the currentHealth to set
+     */
+    public void setCurrentHealth(int currentHealth) {
+        this.currentHealth = currentHealth;
+    }
+
+    /**
+     * @return the currentGas
+     */
+    public int getCurrentGas() {
+        return currentGas;
+    }
+
+    /**
+     * @param currentGas the currentGas to set
+     */
+    public void setCurrentGas(int currentGas) {
+        this.currentGas = currentGas;
+    }
+
+    /**
+     * @return the currentAmmo
+     */
+    public int getCurrentAmmo() {
+        return currentAmmo;
+    }
+
+    /**
+     * @param currentAmmo the currentAmmo to set
+     */
+    public void setCurrentAmmo(int currentAmmo) {
+        this.currentAmmo = currentAmmo;
+    }
+
+    /**
+     * @return the attStrength
+     */
+    public int getAttStrength() {
+        return attStrength;
+    }
+
+    /**
+     * @param attStrength the attStrength to set
+     */
+    public void setAttStrength(int attStrength) {
+        this.attStrength = attStrength;
+    }
+
+    /**
+     * @return the defStrength
+     */
+    public int getDefStrength() {
+        return defStrength;
+    }
+
+    /**
+     * @param defStrength the defStrength to set
+     */
+    public void setDefStrength(int defStrength) {
+        this.defStrength = defStrength;
+    }
+
+    /**
+     * @return the mobility
+     */
+    public int getMobility() {
+        return mobility;
+    }
+
+    /**
+     * @return the vision
+     */
+    public int getVision() {
+        return vision;
+    }
+
+    /**
+     * @return the rangeLow
+     */
+    public int getRangeLow() {
+        return rangeLow;
+    }
+
+    /**
+     * @return the rangeHigh
+     */
+    public int getRangeHigh() {
+        return rangeHigh;
+    }
+    //</editor-fold>
 
     public Unit(int x, int y, Faction faction) {
         this.x = x;
@@ -329,7 +512,7 @@ public abstract class Unit {
      * calculates fuel usage for this unit 
      */
     public void fuelUsage() {
-        switch (this.unitType) {
+        switch (this.getUnitType()) {
             case air: this.gas =- 5;
             case heli: this.gas =- 2;
         }
@@ -359,8 +542,10 @@ public abstract class Unit {
      * @return  
      */
     public int attack(Unit defender, int dmgTable) {
-        
+        throw new UnsupportedOperationException();
     }
+
+    
     
     /**
      * determines if unit can be loaded into loader unit

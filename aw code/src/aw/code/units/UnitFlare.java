@@ -19,19 +19,19 @@ public class UnitFlare extends Unit {
 
     @Override
     protected final void initialize() {
-        this.name = "Flare";
-        this.hasMoved = true;
+        this.setName("Flare");
+        this.setHasMoved(true);
         this.cost = 5000;
         this.attackMode = AttackMode.direct;
         this.unitType = UnitType.vehicle;
-        this.driveType = Drive.tank;
+        this.setDriveType(Drive.tank);
         this.mainGun = "-";
         this.subGun = "Machine Gun";
         this.gas = 60;
         this.ammunition = 3;
-        this.currentHealth = MAXHEALTH;
-        this.currentGas = gas;
-        this.currentAmmo = ammunition;
+        this.setCurrentHealth(getMAXHEALTH());
+        this.setCurrentGas(getGas());
+        this.setCurrentAmmo(getAmmunition());
         this.mobility = 5;
         this.vision = 2;
         this.rangeLow = 1;

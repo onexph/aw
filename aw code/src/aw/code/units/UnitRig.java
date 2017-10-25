@@ -21,17 +21,17 @@ public class UnitRig extends Unit {
 
     @Override
     protected final void initialize() {
-        this.name = "Mobile Workshop";
-        this.hasMoved = true;
+        this.setName("Mobile Workshop");
+        this.setHasMoved(true);
         this.cost = 5000;
         this.attackMode = AttackMode.none;
         this.unitType = UnitType.vehicle;
-        this.driveType = Drive.tank;
+        this.setDriveType(Drive.tank);
         this.mainGun = "-";
         this.subGun = "-";
         this.gas = 99;
-        this.currentHealth = MAXHEALTH;
-        this.currentGas = gas;
+        this.setCurrentHealth(getMAXHEALTH());
+        this.setCurrentGas(getGas());
         this.mobility = 6;
         this.vision = 1;
         this.rangeLow = 1;
@@ -40,6 +40,6 @@ public class UnitRig extends Unit {
 
     @Override
     public boolean canAttack(Unit defender) {
-        return 0;
+        return false;
     }
 }

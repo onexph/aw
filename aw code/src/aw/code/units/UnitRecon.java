@@ -19,17 +19,17 @@ public class UnitRecon extends Unit {
 
     @Override
     protected final void initialize() {
-        this.name = "Recon";
-        this.hasMoved = true;
+        this.setName("Recon");
+        this.setHasMoved(true);
         this.cost = 4000;
         this.attackMode = AttackMode.direct;
         this.unitType = UnitType.vehicle;
-        this.driveType = Drive.tireA;
+        this.setDriveType(Drive.tireA);
         this.mainGun = "-";
         this.subGun = "Machine Gun";
         this.gas = 80;
-        this.currentHealth = MAXHEALTH;
-        this.currentGas = gas;
+        this.setCurrentHealth(getMAXHEALTH());
+        this.setCurrentGas(getGas());
         this.mobility = 8;
         this.vision = 5;
         this.rangeLow = 1;

@@ -19,19 +19,19 @@ public class UnitTankBig extends Unit {
 
     @Override
     protected final void initialize() {
-        this.name = "Mega Tank";
-        this.hasMoved = true;
+        this.setName("Mega Tank");
+        this.setHasMoved(true);
         this.cost = 16000;
         this.attackMode = AttackMode.direct;
         this.unitType = UnitType.vehicle;
-        this.driveType = Drive.tank;
+        this.setDriveType(Drive.tank);
         this.mainGun = "War Tank Gun";
         this.subGun = "Machine Gun";
         this.gas = 50;
         this.ammunition = 5;
-        this.currentHealth = MAXHEALTH;
-        this.currentGas = gas;
-        this.currentAmmo = ammunition;
+        this.setCurrentHealth(getMAXHEALTH());
+        this.setCurrentGas(getGas());
+        this.setCurrentAmmo(getAmmunition());
         this.mobility = 4;
         this.vision = 2;
         this.rangeLow = 1;

@@ -19,17 +19,17 @@ public class UnitFighter extends Unit {
 
     @Override
     protected final void initialize() {
-        this.name = "Fighter";
-        this.hasMoved = true;
+        this.setName("Fighter");
+        this.setHasMoved(true);
         this.cost = 13000;
         this.attackMode = AttackMode.direct;
         this.unitType = UnitType.air;
-        this.driveType = Drive.air;
+        this.setDriveType(Drive.air);
         this.mainGun = "Machine Gun";
         this.subGun = "-";
         this.gas = 99;
-        this.currentHealth = MAXHEALTH;
-        this.currentGas = gas;
+        this.setCurrentHealth(getMAXHEALTH());
+        this.setCurrentGas(getGas());
         this.mobility = 8;
         this.vision = 4;
         this.rangeLow = 1;

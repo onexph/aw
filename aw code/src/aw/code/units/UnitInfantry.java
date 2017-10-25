@@ -19,17 +19,17 @@ public class UnitInfantry extends Unit {
 
     @Override
     protected final void initialize() {
-        this.name = "Infantry";
-        this.hasMoved = true;
+        this.setName("Infantry");
+        this.setHasMoved(true);
         this.cost = 1500;
         this.attackMode = AttackMode.direct;
         this.unitType = UnitType.infantry;
-        this.driveType = Drive.infantry;
+        this.setDriveType(Drive.infantry);
         this.mainGun = "-";
         this.subGun = "Machine Gun";
         this.gas = 99;
-        this.currentHealth = MAXHEALTH;
-        this.currentGas = gas;
+        this.setCurrentHealth(getMAXHEALTH());
+        this.setCurrentGas(getGas());
         this.mobility = 3;
         this.vision = 2;
         this.rangeLow = 1;

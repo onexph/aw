@@ -24,19 +24,19 @@ public class UnitGunboat extends Unit {
 
     @Override
     protected final void initialize() {
-        this.name = "Missile Boat";
-        this.hasMoved = true;
+        this.setName("Missile Boat");
+        this.setHasMoved(true);
         this.cost = 6000;
         this.attackMode = AttackMode.direct;
         this.unitType = UnitType.ship;
-        this.driveType = Drive.ship;
+        this.setDriveType(Drive.ship);
         this.mainGun = "Anti-Ship Missiles";
         this.subGun = "-";
         this.gas = 99;
         this.ammunition = 1;
-        this.currentHealth = MAXHEALTH;
-        this.currentGas = gas;
-        this.currentAmmo = ammunition;
+        this.setCurrentHealth(getMAXHEALTH());
+        this.setCurrentGas(getGas());
+        this.setCurrentAmmo(getAmmunition());
         this.mobility = 7;
         this.vision = 2;
         this.rangeLow = 1;

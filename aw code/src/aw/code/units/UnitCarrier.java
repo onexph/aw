@@ -25,18 +25,18 @@ public class UnitCarrier extends Unit {
 
     @Override
     protected final void initialize() {
-        this.name = "Carrier";
-        this.hasMoved = true;
+        this.setName("Carrier");
+        this.setHasMoved(true);
         this.cost = 28000;
         this.attackMode = AttackMode.direct;
         this.unitType = UnitType.ship;
-        this.driveType = Drive.ship;
+        this.setDriveType(Drive.ship);
         this.mainGun = "-";
         this.subGun = "Anti-Air Gun";
         this.gas = 99;
-        this.currentHealth = MAXHEALTH;
-        this.currentGas = gas;
-        this.currentAmmo = ammunition;
+        this.setCurrentHealth(getMAXHEALTH());
+        this.setCurrentGas(getGas());
+        this.setCurrentAmmo(getAmmunition());
         this.mobility = 5;
         this.vision = 4;
         this.rangeLow = 1;

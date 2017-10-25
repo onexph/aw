@@ -20,19 +20,19 @@ public class UnitAA extends Unit {
 
     @Override
     protected final void initialize() {
-        this.name = "Anti-Air";
-        this.hasMoved = true; 
+        this.setName("Anti-Air");
+        this.setHasMoved(true); 
         this.cost = 7000;
         this.attackMode = AttackMode.direct;
         this.unitType = UnitType.vehicle;
-        this.driveType = Drive.tank;
+        this.setDriveType(Drive.tank);
         this.mainGun = "Cannon";
         this.subGun = "-";
         this.gas = 60;
         this.ammunition = 6;
-        this.currentHealth = MAXHEALTH;
-        this.currentGas = gas;
-        this.currentAmmo = ammunition;
+        this.setCurrentHealth(getMAXHEALTH());
+        this.setCurrentGas(getGas());
+        this.setCurrentAmmo(getAmmunition());
         this.mobility = 6;
         this.vision = 3;
         this.rangeLow = 1;

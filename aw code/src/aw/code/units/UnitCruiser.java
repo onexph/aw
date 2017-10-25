@@ -25,19 +25,19 @@ public class UnitCruiser extends Unit {
 
     @Override
     protected final void initialize() {
-        this.name = "Cruiser";
-        this.hasMoved = true;
+        this.setName("Cruiser");
+        this.setHasMoved(true);
         this.cost = 16000;
         this.attackMode = AttackMode.direct;
         this.unitType = UnitType.ship;
-        this.driveType = Drive.transport;
+        this.setDriveType(Drive.transport);
         this.mainGun = "Anti-Ship Missiles";
         this.subGun = "Anti-Air Gun";
         this.gas = 99;
         this.ammunition = 9;
-        this.currentHealth = MAXHEALTH;
-        this.currentGas = gas;
-        this.currentAmmo = ammunition;
+        this.setCurrentHealth(getMAXHEALTH());
+        this.setCurrentGas(getGas());
+        this.setCurrentAmmo(getAmmunition());
         this.mobility = 6;
         this.vision = 5;
         this.rangeLow = 1;

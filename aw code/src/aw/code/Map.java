@@ -8,8 +8,11 @@ import aw.code.units.*;
  */
 public class Map {
 
-    
-    
+    /**
+     * size of the map
+     */
+    public int xSize;
+    public int ySize;
     
     /**
      * the factions
@@ -55,10 +58,32 @@ public class Map {
         if (defender.getCurrentHealth() <= attDmg) {
             destroy(defender);
         } else if (attacker instanceof UnitAT) {
-            
+            /**
+             * AT gun has special damage calc due to counter attack ability 
+             * and dual attack type (direct AND ranged)
+             */
+            //------Special AT Part Start---------------
+            defender.setCurrentHealth(defender.getCurrentHealth() - attDmg);
+            if (isNextTo(attacker, defender)) {
+                int defDmg = defender.attack(attacker, defender.getDmgTable(attacker));
+                if (attacker.getCurrentHealth() <= defDmg) {
+                    destroy(attacker);
+                } else {
+                    attacker.setCurrentHealth(attacker.getCurrentHealth() - defDmg);
+                }
+            }
+        } else if (defender instanceof UnitAT && attacker.getAttackMode() == Unit.AttackMode.direct) { 
+            int defDmg = defender.attack(attacker, defender.getDmgTable(attacker));
+            if (attacker.getCurrentHealth() <= defDmg) {
+                destroy(attacker);
+            } else {
+                attacker.setCurrentHealth(attacker.getCurrentHealth() - defDmg);
+            }
+            defender.setCurrentHealth(defender.getCurrentHealth() - attDmg);
+            //------Special AT Part Finish---------------
         } else {
             defender.setCurrentHealth(defender.getCurrentHealth() - attDmg);
-            if (attacker.getAttackMode() != Unit.AttackMode.ranged && defender.getAttackMode() != Unit.AttackMode.ranged) {
+            if (attacker.getAttackMode() != Unit.AttackMode.ranged && defender.getAttackMode() == Unit.AttackMode.direct) {
                 int defDmg = defender.attack(attacker, defender.getDmgTable(attacker));
                 if (attacker.getCurrentHealth() <= defDmg) {
                     destroy(attacker);
@@ -78,6 +103,9 @@ public class Map {
     }
     
     public static boolean isNextTo(Unit unitA, Unit unitB) {
-        
+        return (unitA.getX() - 1 == unitB.getX() ||  //Left
+                unitA.getX() + 1 == unitB.getX() ||  //Right
+                unitA.getY() + 1 == unitB.getY() ||  //Above
+                unitA.getY() - 1 == unitB.getY());   //Below
     }
 }

@@ -19,19 +19,19 @@ public class UnitRockets extends Unit {
 
     @Override
     protected final void initialize() {
-        this.name = "Rockets";
-        this.hasMoved = true;
+        this.setName("Rockets");
+        this.setHasMoved(true);
         this.cost = 15000;
         this.attackMode = AttackMode.ranged;
         this.unitType = UnitType.vehicle;
-        this.driveType = Drive.tireA;
+        this.setDriveType(Drive.tireA);
         this.mainGun = "Rocket";
         this.subGun = "-";
         this.gas = 50;
         this.ammunition = 5;
-        this.currentHealth = MAXHEALTH;
-        this.currentGas = gas;
-        this.currentAmmo = ammunition;
+        this.setCurrentHealth(getMAXHEALTH());
+        this.setCurrentGas(getGas());
+        this.setCurrentAmmo(getAmmunition());
         this.mobility = 5;
         this.vision = 5;
         this.rangeLow = 3;

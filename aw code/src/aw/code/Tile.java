@@ -17,6 +17,6 @@ public class Tile {
      * Things on a tile
      */
     public Unit unit;
-    public TileContent tileContent;
+    public Object tileContent;
     
 }

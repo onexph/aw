@@ -21,17 +21,17 @@ public class UnitTHeli extends Unit {
 
     @Override
     protected final void initialize() {
-        this.name = "Transport Heli";
-        this.hasMoved = true;
+        this.setName("Transport Heli");
+        this.setHasMoved(true);
         this.cost = 5000;
         this.attackMode = AttackMode.none;
         this.unitType = UnitType.air;
-        this.driveType = Drive.air;
+        this.setDriveType(Drive.air);
         this.mainGun = "-";
         this.subGun = "-";
         this.gas = 99;
-        this.currentHealth = MAXHEALTH;
-        this.currentGas = gas;
+        this.setCurrentHealth(getMAXHEALTH());
+        this.setCurrentGas(getGas());
         this.mobility = 6;
         this.vision = 1;
         this.rangeLow = 1;
@@ -40,6 +40,6 @@ public class UnitTHeli extends Unit {
 
     @Override
     public boolean canAttack(Unit defender) {
-        return 0;
+        return false;
     }
 }

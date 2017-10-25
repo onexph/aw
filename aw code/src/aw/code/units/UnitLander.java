@@ -22,17 +22,17 @@ public class UnitLander extends Unit {
 
     @Override
     protected final void initialize() {
-        this.name = "Lander";
-        this.hasMoved = true;
+        this.setName("Lander");
+        this.setHasMoved(true);
         this.cost = 10000;
         this.attackMode = AttackMode.none;
         this.unitType = UnitType.ship;
-        this.driveType = Drive.transport;
+        this.setDriveType(Drive.transport);
         this.mainGun = "-";
         this.subGun = "-";
         this.gas = 99;
-        this.currentHealth = MAXHEALTH;
-        this.currentGas = gas;
+        this.setCurrentHealth(getMAXHEALTH());
+        this.setCurrentGas(getGas());
         this.mobility = 6;
         this.vision = 1;
         this.rangeLow = 1;
@@ -41,6 +41,6 @@ public class UnitLander extends Unit {
 
     @Override
     public boolean canAttack(Unit defender) {
-        return 0;
+        return false;
     }
 }

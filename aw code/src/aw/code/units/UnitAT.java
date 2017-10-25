@@ -19,19 +19,19 @@ public class UnitAT extends Unit {
 
     @Override
     protected final void initialize() {
-        this.name = "Anti-Tank";
-        this.hasMoved = true;
+        this.setName("Anti-Tank");
+        this.setHasMoved(true);
         this.cost = 11000;
         this.attackMode = AttackMode.ranged;
         this.unitType = UnitType.vehicle;
-        this.driveType = Drive.tireB;
+        this.setDriveType(Drive.tireB);
         this.mainGun = "Cannon";
         this.subGun = "-";
         this.gas = 50;
         this.ammunition = 6;
-        this.currentHealth = MAXHEALTH;
-        this.currentGas = gas;
-        this.currentAmmo = ammunition;
+        this.setCurrentHealth(getMAXHEALTH());
+        this.setCurrentGas(getGas());
+        this.setCurrentAmmo(getAmmunition());
         this.mobility = 4;
         this.vision = 2;
         this.rangeLow = 1;
