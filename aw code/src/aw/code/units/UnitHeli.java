@@ -44,4 +44,9 @@ public class UnitHeli extends Unit {
             return (this.ammunition != 0 || (defender.getUnitType() != UnitType.ship && defender.getUnitType() != UnitType.sub));
         }
     }
+    
+    @Override
+    public int getDmgTable(Unit Defender) {
+        return this.ammunition != 0 ? 1 : 0;
+    }
 }

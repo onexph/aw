@@ -34,5 +34,10 @@ public class UnitBazooka extends Unit {
         this.vision = 2;
         this.rangeLow = 1;
         this.rangeHigh = 1;
-    }    
+    }
+    
+    @Override
+    public int getDmgTable(Unit Defender) {
+        return this.ammunition != 0 ? 1 : 0;
+    }
 }

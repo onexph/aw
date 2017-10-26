@@ -531,10 +531,11 @@ public abstract class Unit {
     /**
      * checks which DmgTable is to be used against defending unit
      * @param defender
-     * @return 
+     * @return  0 for MAINDMG table
+     *          1 for SUBDMG table
      */
     public int getDmgTable(Unit defender) {
-        throw new UnsupportedOperationException();
+        return 0;
     }
     
     /**
