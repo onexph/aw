@@ -523,7 +523,9 @@ public abstract class Unit {
      * @param defender
      * @return 
      */
-    public abstract boolean canAttack(Unit defender);
+    public boolean canAttack(Unit defender) {
+        return this.canAttack.contains(defender.getUnitType());
+    }
     
     
     /**

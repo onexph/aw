@@ -8,10 +8,7 @@ import java.util.EnumSet;
  *
  * @author minf102322
  */
-public class UnitBazooka extends Unit {
-    
-    protected static EnumSet<UnitType> canAttack = 
-            EnumSet.of(UnitType.infantry, UnitType.vehicle, UnitType.heli, UnitType.meteor);
+public class UnitBazooka extends Unit {            
 
     public UnitBazooka(int x, int y, Map.Faction faction) {
         super(x, y, faction);
@@ -22,6 +19,7 @@ public class UnitBazooka extends Unit {
         this.setName("Bazooka");
         this.setHasMoved(true);
         this.cost = 2500;
+        this.canAttack = EnumSet.of(UnitType.infantry, UnitType.vehicle, UnitType.heli, UnitType.meteor);
         this.attackMode = AttackMode.direct;
         this.unitType = UnitType.infantry;
         this.setDriveType(Drive.bazooka);
@@ -37,9 +35,4 @@ public class UnitBazooka extends Unit {
         this.rangeLow = 1;
         this.rangeHigh = 1;
     }    
-
-    @Override
-    public boolean canAttack(Unit defender) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

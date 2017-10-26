@@ -14,9 +14,6 @@ public class UnitGunboat extends Unit {
      * can load infantry and bazooka
      */
     Unit[] load = new Unit[1];
-    
-    protected static EnumSet<UnitType> canAttack = 
-            EnumSet.of(UnitType.ship, UnitType.sub);
 
     public UnitGunboat(int x, int y, Map.Faction faction) {
         super(x, y, faction);
@@ -27,6 +24,7 @@ public class UnitGunboat extends Unit {
         this.setName("Missile Boat");
         this.setHasMoved(true);
         this.cost = 6000;
+        this.canAttack = EnumSet.of(UnitType.ship, UnitType.sub);
         this.attackMode = AttackMode.direct;
         this.unitType = UnitType.ship;
         this.setDriveType(Drive.ship);
@@ -41,10 +39,5 @@ public class UnitGunboat extends Unit {
         this.vision = 2;
         this.rangeLow = 1;
         this.rangeHigh = 1;
-    }  
-
-    @Override
-    public boolean canAttack(Unit defender) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

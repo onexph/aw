@@ -15,9 +15,6 @@ public class UnitCruiser extends Unit {
      * can load helis
      */
     Unit[] load = new Unit[2];
-
-    protected static EnumSet<UnitType> canAttack = 
-            EnumSet.of(UnitType.sub, UnitType.ship,UnitType.air, UnitType.heli);
     
     public UnitCruiser(int x, int y, Map.Faction faction) {
         super(x, y, faction);
@@ -28,6 +25,7 @@ public class UnitCruiser extends Unit {
         this.setName("Cruiser");
         this.setHasMoved(true);
         this.cost = 16000;
+        this.canAttack = EnumSet.of(UnitType.sub, UnitType.ship, UnitType.air, UnitType.heli);
         this.attackMode = AttackMode.direct;
         this.unitType = UnitType.ship;
         this.setDriveType(Drive.transport);
@@ -42,10 +40,13 @@ public class UnitCruiser extends Unit {
         this.vision = 5;
         this.rangeLow = 1;
         this.rangeHigh = 1;
-    }  
-
+    }
     @Override
     public boolean canAttack(Unit defender) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (!this.canAttack.contains(defender.getUnitType())) {
+            return false;
+        } else {
+            return (this.ammunition != 0 || defender.getUnitType() == UnitType.heli || defender.getUnitType() == UnitType.air);
+        }
     }
 }

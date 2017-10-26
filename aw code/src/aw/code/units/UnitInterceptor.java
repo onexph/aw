@@ -10,9 +10,6 @@ import java.util.EnumSet;
  */
 public class UnitInterceptor extends Unit {
 
-    protected static EnumSet<UnitType> canAttack = 
-            EnumSet.of(UnitType.air, UnitType.heli);
-    
     public UnitInterceptor(int x, int y, Map.Faction faction) {
         super(x, y, faction);
     }
@@ -22,6 +19,7 @@ public class UnitInterceptor extends Unit {
         this.setName("Interceptor");
         this.setHasMoved(true);
         this.cost = 20000;
+        this.canAttack = EnumSet.of(UnitType.air, UnitType.heli);
         this.attackMode = AttackMode.direct;
         this.unitType = UnitType.air;
         this.setDriveType(Drive.air);
@@ -36,10 +34,5 @@ public class UnitInterceptor extends Unit {
         this.vision = 5;
         this.rangeLow = 1;
         this.rangeHigh = 1;
-    }   
-
-    @Override
-    public boolean canAttack(Unit defender) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

@@ -10,9 +10,6 @@ import java.util.EnumSet;
  */
 public class UnitRockets extends Unit {
 
-    protected static EnumSet<UnitType> canAttack = 
-            EnumSet.of(UnitType.infantry, UnitType.vehicle, UnitType.ship, UnitType.sub, UnitType.meteor);
-    
     public UnitRockets(int x, int y, Map.Faction faction) {
         super(x, y, faction);
     }
@@ -22,6 +19,7 @@ public class UnitRockets extends Unit {
         this.setName("Rockets");
         this.setHasMoved(true);
         this.cost = 15000;
+        this.canAttack = EnumSet.of(UnitType.infantry, UnitType.vehicle, UnitType.ship, UnitType.sub, UnitType.meteor);
         this.attackMode = AttackMode.ranged;
         this.unitType = UnitType.vehicle;
         this.setDriveType(Drive.tireA);
@@ -36,10 +34,5 @@ public class UnitRockets extends Unit {
         this.vision = 5;
         this.rangeLow = 3;
         this.rangeHigh = 5;
-    }    
-
-    @Override
-    public boolean canAttack(Unit defender) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

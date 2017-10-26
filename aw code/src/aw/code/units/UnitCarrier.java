@@ -16,9 +16,6 @@ public class UnitCarrier extends Unit {
      */
     Unit[] load = new Unit[2];
 
-    protected static EnumSet<UnitType> canAttack = 
-            EnumSet.of(UnitType.air, UnitType.heli);
-    
     public UnitCarrier(int x, int y, Map.Faction faction) {
         super(x, y, faction);
     }
@@ -28,6 +25,7 @@ public class UnitCarrier extends Unit {
         this.setName("Carrier");
         this.setHasMoved(true);
         this.cost = 28000;
+        this.canAttack = EnumSet.of(UnitType.air, UnitType.heli);
         this.attackMode = AttackMode.direct;
         this.unitType = UnitType.ship;
         this.setDriveType(Drive.ship);
@@ -41,10 +39,5 @@ public class UnitCarrier extends Unit {
         this.vision = 4;
         this.rangeLow = 1;
         this.rangeHigh = 1;
-    }    
-
-    @Override
-    public boolean canAttack(Unit defender) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
